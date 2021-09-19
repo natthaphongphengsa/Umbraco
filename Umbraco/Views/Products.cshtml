@@ -23,12 +23,27 @@
             {
                 foreach (Product product in Model.FeaturedProducts)
                 {
-                    <a href="@product.Url" class="product-grid__item" style="background-image: url('@product.Photos.Url')">
-                        <div class="product-grid__item__overlay">
-                            <div class="product-grid__item__name">@product.ProductName</div>
-                            <div class="product-grid__item__price">@Model.DefaultCurrency @product.Price.ToString("F")</div>
-                        </div>
-                    </a>
+                   if(@product.Active == true)
+                   {
+                        <a href="@product.Url" class="product-grid__item" style="background-image: url('@product.Photos.Url')">
+                            @if(@product.Campaign != 0)
+                            {
+                                <img src="@Model.FlashSaleLogo.Url" alt="Sale" style="z-index: 1; width: 60%;float:right;margin: -3.5rem;"/>
+                                <div class="product-grid__item__overlay">
+                                    <div class="product-grid__item__name">@product.ProductName</div>
+                                    <div class="product-grid__item__price" style="color:red;">@Model.DefaultCurrency @product.Campaign.ToString("F")</div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="product-grid__item__overlay">
+                                    <div class="product-grid__item__name">@product.ProductName</div>
+                                    <div class="product-grid__item__price">@Model.DefaultCurrency @product.Price.ToString("F")</div>
+                                </div>
+                            }
+                        </a>
+                   }
+
                 }
             }
         </div>

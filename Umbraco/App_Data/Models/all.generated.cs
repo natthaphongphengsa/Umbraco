@@ -6,7 +6,7 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "59cf0f5d142b2736")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "908119bcf3db72cb")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -213,6 +213,13 @@ namespace Umbraco.Web.PublishedModels
 		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> FeaturedProducts => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("featuredProducts");
 
 		///<summary>
+		/// FlashSaleLogo
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]
+		[ImplementPropertyType("flashSaleLogo")]
+		public virtual global::Umbraco.Core.Models.PublishedContent.IPublishedContent FlashSaleLogo => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("flashSaleLogo");
+
+		///<summary>
 		/// Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]
@@ -274,6 +281,13 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Active
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]
+		[ImplementPropertyType("active")]
+		public virtual bool Active => this.Value<bool>("active");
+
+		///<summary>
 		/// Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]
@@ -281,11 +295,18 @@ namespace Umbraco.Web.PublishedModels
 		public virtual global::Newtonsoft.Json.Linq.JToken BodyText => this.Value<global::Newtonsoft.Json.Linq.JToken>("bodyText");
 
 		///<summary>
-		/// Campaign
+		/// Campaign Price
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]
 		[ImplementPropertyType("campaign")]
 		public virtual decimal Campaign => this.Value<decimal>("campaign");
+
+		///<summary>
+		/// Campaign Valid
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]
+		[ImplementPropertyType("campaignValid")]
+		public virtual global::System.DateTime CampaignValid => this.Value<global::System.DateTime>("campaignValid");
 
 		///<summary>
 		/// Category

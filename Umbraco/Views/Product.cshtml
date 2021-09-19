@@ -16,8 +16,16 @@
             </div>
             <div class="col-md-6">
                 <h1>@Model.ProductName</h1>
-                <div class="product-price">@Model.Parent.GetProperty("DefaultCurrency").Value() @Model.Price.ToString("F")</div>
-                @Model.Value("campaign")
+                @if(@Model.Campaign != 0)
+                {
+                    <div class="product-price"><strike style="color:red; font-size:1rem;">@Model.Parent.GetProperty("DefaultCurrency").Value() @Model.Price.ToString("F")</strike></div>
+                    <div class="product-price" style="color:red; font-size:3rem;">@Model.Parent.GetProperty("DefaultCurrency").Value() @Model.Campaign.ToString("F")</div>
+                    <p>Valid: @Model.CampaignValid.ToString("yyyy-MM-dd")</p>
+                }
+                else
+                {
+                    <div class="product-price">@Model.Parent.GetProperty("DefaultCurrency").Value() @Model.Price.ToString("F")</div>
+                }
                 <div class="product-teaser">@Model.Description</div>
                 <div class="product-button">
                     <button class="button button--border--solid">Buy</button>
