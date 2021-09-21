@@ -18,6 +18,7 @@
                 <h1>@Model.ProductName</h1>
                 @if(@Model.Campaign != 0)
                 {
+                    <img src="@Umbraco.Media(1148).Url" alt="Sale" style="z-index: 1; width: 60%;float:right;margin: -3.5rem;"/>
                     <div class="product-price"><strike style="color:red; font-size:1rem;">@Model.Parent.GetProperty("DefaultCurrency").Value() @Model.Price.ToString("F")</strike></div>
                     <div class="product-price" style="color:red; font-size:3rem;">@Model.Parent.GetProperty("DefaultCurrency").Value() @Model.Campaign.ToString("F")</div>
                     <p>Valid: @Model.CampaignValid.ToString("yyyy-MM-dd")</p>
