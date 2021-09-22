@@ -6,7 +6,7 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "908119bcf3db72cb")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a2dbccd2399b621")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
@@ -302,11 +302,18 @@ namespace Umbraco.Web.PublishedModels
 		public virtual decimal Campaign => this.Value<decimal>("campaign");
 
 		///<summary>
-		/// Campaign Valid
+		/// CampaignEnd
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]
-		[ImplementPropertyType("campaignValid")]
-		public virtual global::System.DateTime CampaignValid => this.Value<global::System.DateTime>("campaignValid");
+		[ImplementPropertyType("campaignEnd")]
+		public virtual global::System.DateTime CampaignEnd => this.Value<global::System.DateTime>("campaignEnd");
+
+		///<summary>
+		/// Campaign Start
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]
+		[ImplementPropertyType("campaignStart")]
+		public virtual global::System.DateTime CampaignStart => this.Value<global::System.DateTime>("campaignStart");
 
 		///<summary>
 		/// Category
